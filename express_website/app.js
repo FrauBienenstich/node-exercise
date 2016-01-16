@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var nodemailer = require('nodemailer');
 
-var routes = require('./routes/index');
+var index = require('./routes/index');
 var about = require('./routes/about');
 var contact = require('./routes/contact');
 
@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
+app.use('/', index);
 app.use('/about', about);
 app.use('/contact', contact);
 
